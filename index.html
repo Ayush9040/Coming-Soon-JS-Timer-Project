@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./images/logo.png" alt="logo" class="logo" />
+
+      <div class="content">
+        <p>Website is under Maintainance</p>
+        <h1>We are lunching soon</h1>
+
+        <div class="count-timer">
+          <div>
+            <div id="days">00</div>
+            <div>Days</div>
+          </div>
+
+          <div>
+            <div id="hours">00</div>
+            <div>Hours</div>
+          </div>
+
+          <div>
+            <div id="mins">00</div>
+            <div>Minutes</div>
+          </div>
+
+          <div>
+            <div id="sec">00</div>
+            <div>Seconds</div>
+          </div>
+        </div>
+
+        <button>Learn More</button>
+      </div>
+
+      <img src="./images/rocket.png" alt="" class="rocket" />
+    </div>
+
+    <script>
+      var stopDate = new Date("July 19, 2024 00:00:00").getTime();
+
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var dis = stopDate - now;
+
+        var days = Math.floor(dis / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (dis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+
+        var mins = Math.floor((dis % (1000 * 60 * 60)) / (1000 * 60));
+
+        var sec = Math.floor((dis % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("mins").innerHTML = mins;
+        document.getElementById("sec").innerHTML = sec;
+      }, 1000);
+    </script>
+  </body>
+</html>
